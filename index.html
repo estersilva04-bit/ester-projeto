@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Tennis Store</title>
+    <style>
+        /* ==================== ESTILOS GLOBAIS ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fa;
+            color: #2d3748;
+        }
+
+        /* ==================== CABEÇALHO (HEADER) ==================== */
+        header {
+            background-color: #00b4d8;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            color: #fff;
+            font-size: 26px;
+        }
+
+        .logo span {
+            color: #ffb703;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffb703;
+        }
+
+        /* ==================== BANNER (HERO) ==================== */
+        .hero {
+            background: linear-gradient(rgba(0, 180, 216, 0.6), rgba(3, 4, 94, 0.8)), 
+                        url('https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=1200') center/cover;
+            height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-cta {
+            background-color: #ffb703;
+            color: #023047;
+            padding: 12px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color: #fb8500;
+            color: #fff;
+        }
+
+        /* ==================== VITRINE DE PRODUTOS ==================== */
+        .produtos-secao {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .produtos-secao h3 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #023047;
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* CARD INDIVIDUAL */
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .produto-imagem {
+            background-color: #e2e8f0;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+
+        .produto-info {
+            padding: 25px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .produto-info h4 {
+            font-size: 20px;
+            color: #023047;
+            margin-bottom: 10px;
+        }
+
+        .produto-info .descricao {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .produto-info .preco {
+            font-size: 24px;
+            color: #00b4d8;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .btn-comprar {
+            background-color: #023047;
+            color: #fff;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-comprar:hover {
+            background-color: #00b4d8;
+        }
+
+        /* ==================== RODAPÉ (FOOTER) ==================== */
+        footer {
+            background-color: #023047;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Beach<span>Store</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Raquetes</a></li>
+                <li><a href="#">Acessórios</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Alta Performance na Areia</h2>
+        <p>Encontre a raquete ideal para o seu estilo de jogo. Modelos exclusivos em Carbono 3K, 12K e Kevlar.</p>
+        <a href="#" class="btn-cta">Ver Catálogo</a>
+    </section>
+
+    <main class="produtos-secao">
+        <h3>Modelos em Destaque</h3>
+        
+        <div class="grid-produtos">
+            
+            <div class="card">
+                <div class="produto-imagem">🎾</div>
+                <div class="produto-info">
+                    <h4>Raquete Black Carbon 3K</h4>
+                    <p class="descricao">Fibra de Carbono 3K & EVA Soft. Ideal para controle e precisão.</p>
+                    <p class="preco">R$ 899,90</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="produto-imagem">🎾</div>
+                <div class="produto-info">
+                    <h4>Raquete Kevlar Pro</h4>
+                    <p class="descricao">Mix de Carbono e Kevlar. Máxima absorção de impacto.</p>
+                    <p class="preco">R$ 1.199,90</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="produto-imagem">🎾</div>
+                <div class="produto-info">
+                    <h4>Raquete Yellow Control</h4>
+                    <p class="descricao">Fibra de Vidro de alta resistência. Perfeita para iniciantes.</p>
+                    <p class="preco">R$ 449,90</p>
+                    <a href="#" class="btn-comprar">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Beach Store. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
